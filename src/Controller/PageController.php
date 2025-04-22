@@ -8,6 +8,8 @@ namespace App\Controller;
 // On indique ici le namespace de la classe qu'on veut utiliser et Symfony + composer font le require automatiquement
 use Symfony\Component\Routing\Annotation\Route;
 
+use Symfony\Component\HttpFoundation\Response;
+
 // Création d'une classe "PageController"
 class PageController {
 
@@ -17,20 +19,21 @@ class PageController {
 
     // Création d'une fonction "home"
     public function home(){
-        var_dump('Page accueil'); die;
+        // J'utilise la classe "Response" de Symfony pour renvoyer une réponse HTTP avec du HTML et le statut 200
+        return new Response("<h1>Bienvenue sur la page d'accueil</h1>", 200);
     }
 
     #[Route('/contact', name:'contact')]
 
     // Création d'une fonction "contact"
     public function contact(){
-        var_dump('Page contact'); die;
+        return new Response("<h1>Bienvenue sur la page des contacts</h1>", 200);
     }
 
     #[Route('/a-propos', name:'about')]
 
     // Création d'une fonction "about"
     public function about(){
-        var_dump('Page a-propos'); die;
+        return new Response("<h1>Bienvenue sur la page à propos</h1>", 200);
     }
 }
