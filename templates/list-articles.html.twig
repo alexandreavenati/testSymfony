@@ -6,19 +6,23 @@
 
 	{% for article in articles %}
 
-		<article>
-			<div>
-				<h2>
-					<a href="#">{{ article.title }}</a>
-				</h2>
-				<p>{{ article.content }}</p>
-			</div>
+		{% if article.is_published %}
 
-			<div>
-				<img src="{{ article.image }}" alt="img">
-				<span>{{ article.created_at | date }}</span>
-			</div>
-		</article>
+			<article>
+				<div>
+					<h2>
+						<a href="#">{{ article.title }}</a>
+					</h2>
+					<p>{{ article.content }}</p>
+				</div>
+
+				<div>
+					<img src="{{ article.image }}" alt="img">
+					<span>{{ article.created_at | date }}</span>
+				</div>
+			</article>
+
+		{% endif %}
 
 	{% endfor %}
 
