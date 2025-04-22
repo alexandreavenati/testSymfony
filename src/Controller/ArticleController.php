@@ -12,22 +12,22 @@ class ArticleController {
 
     #[Route('/liste-d-articles', name:'list-article')]
 
-    // Création d'une fonction "home"
-    public function home(){
+    // Création d'une fonction "articleList"
+    public function articleList(){
         var_dump("Liste d'articles"); die;
     }
 
     #[Route('/creer-article', name:'create-article')]
 
-    // Création d'une fonction "contact"
-    public function contact(){
+    // Création d'une fonction "createArticle"
+    public function createArticle(){
         var_dump('Créer un article'); die;
     }
 
     #[Route('/supprimer-article', name:'delete-article')]
 
-    // Création d'une fonction "about"
-    public function about(){
+    // Création d'une fonction "delArticle"
+    public function delArticle(){
         var_dump('Supprimer un article'); die;
     }
 }
