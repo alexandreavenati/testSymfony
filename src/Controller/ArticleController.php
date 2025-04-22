@@ -8,29 +8,26 @@ namespace App\Controller;
 // On indique ici le namespace de la classe qu'on veut utiliser et Symfony + composer font le require automatiquement
 use Symfony\Component\Routing\Annotation\Route;
 
-// Création d'une classe "PageController"
-class PageController {
+class ArticleController {
 
-    // Quand on demande l'url "/" ma fonction est appelée
-    // Création d'une annotation Route (page)
-    #[Route('/', name:'home')]
+    #[Route('/liste-d-articles', name:'list-article')]
 
     // Création d'une fonction "home"
     public function home(){
-        var_dump('Page accueil'); die;
+        var_dump("Liste d'articles"); die;
     }
 
-    #[Route('/contact', name:'contact')]
+    #[Route('/creer-article', name:'create-article')]
 
     // Création d'une fonction "contact"
     public function contact(){
-        var_dump('Page contact'); die;
+        var_dump('Créer un article'); die;
     }
 
-    #[Route('/a-propos', name:'about')]
+    #[Route('/supprimer-article', name:'delete-article')]
 
     // Création d'une fonction "about"
     public function about(){
-        var_dump('Page a-propos'); die;
+        var_dump('Supprimer un article'); die;
     }
 }
