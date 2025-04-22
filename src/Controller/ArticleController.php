@@ -6,25 +6,24 @@ namespace App\Controller;
 
 // Remplace le require
 // On indique ici le namespace de la classe qu'on veut utiliser et Symfony + composer font le require automatiquement
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-use Symfony\Component\HttpFoundation\Response;
 
-
-class ArticleController {
+class ArticleController extends AbstractController {
 
     #[Route('/liste-d-articles', name:'list-article')]
 
     // Création d'une fonction "articleList"
     public function articleList(){
-        return new Response("<h1>Bienvenue sur la liste d'articles</h1>", 200);
+        return $this->render('articleList.html.twig');
     }
 
     #[Route('/creer-article', name:'create-article')]
 
     // Création d'une fonction "createArticle"
     public function createArticle(){
-        return new Response("<h1>Bienvenue sur la page de création d'article</h1>", 200);
+        return $this->render('createArticle.html.twig');
 
     }
 
@@ -32,6 +31,6 @@ class ArticleController {
 
     // Création d'une fonction "delArticle"
     public function delArticle(){
-        return new Response("<h1>Bienvenue sur la page de suppression d'articles</h1>", 200);
+        return $this->render('delArticle.html.twig');
     }
 }
