@@ -1,0 +1,30 @@
+{% include 'partial/_header.html.twig' %}
+
+<section>
+	<article>
+
+		<div>
+			<h2><a href="#">{{profile.firstName}} {{profile.lastName}}</a></h2>
+			<p>Job : {{profile.job}}</p>
+			
+			<p>Langues : {{ profile.languages|join(', ') }}</p>
+
+			{% if profile.looksForJob is same as(false) %}
+
+				<p>Ne recherche pas d'emploi</p>
+
+			{% else %}
+
+				<p>Recherche un emploi</p>
+
+			{% endif %}
+		</div>
+
+		<div>
+			<img src="{{profile.avatar}}" alt="img">
+		</div>
+        
+	</article>
+</section>
+
+{% include 'partial/_footer.html.twig' %}
