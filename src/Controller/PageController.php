@@ -18,7 +18,8 @@ class PageController extends AbstractController {
 
     // Création d'une fonction "home"
     public function home(){
-        // Utilisation de la méthode render qui permet de récupérer un fichier twig
+        // Utilisation de la méthode render qui permet de récupérer un fichier de view twig, 
+        // le transforme en HTML et de le renvoyer en response HTTP avec un statut 200
         return $this->render('home.html.twig');
     }
 

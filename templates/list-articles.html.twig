@@ -1,0 +1,27 @@
+{% include 'partial/_header.html.twig' %}
+
+<h1>Bienvenue sur la page d'articles</h1>
+
+<section>
+
+	{% for article in articles %}
+
+		<article>
+			<div>
+				<h2>
+					<a href="#">{{article.title}}</a>
+				</h2>
+				<p>{{article.content}}</p>
+			</div>
+
+			<div>
+				<img src="{{article.image}}" alt="img">
+				<span>{{article.created_at | date}}</span>
+			</div>
+		</article>
+
+	{% endfor %}
+
+</section>
+
+{% include 'partial/_footer.html.twig' %}
