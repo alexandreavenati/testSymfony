@@ -9,14 +9,14 @@
 		<article>
 			<div>
 				<h2>
-					<a href="#">{{article.title}}</a>
+					<a href="#">{{ article.title }}</a>
 				</h2>
-				<p>{{article.content}}</p>
+				<p>{{ article.content }}</p>
 			</div>
 
 			<div>
-				<img src="{{article.image}}" alt="img">
-				<span>{{article.created_at | date}}</span>
+				<img src="{{ article.image }}" alt="img">
+				<span>{{ article.created_at | date }}</span>
 			</div>
 		</article>
 
