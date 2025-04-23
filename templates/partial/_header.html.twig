@@ -4,8 +4,43 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>What is this Symfony!!!</title>
-        <link rel="stylesheet" href="../public/assets/css/style.css">
+		<link rel="stylesheet" href="../public/assets/css/style.css">
 	</head>
 
 	<body>
+
+		<header>
+
+			{% set route = app.request.attributes.get('_route') %}
+
+			<nav>
+				<ul>
+					<li>
+						<a href="{{ path('home') }}" class="{{ route == 'home' ? 'active' : '' }}">Accueil</a>
+					</li>
+					<li>
+						<a href="{{ path('list-article') }}" class="{{ route starts with 'list-article' ? 'active' : '' }}">Articles</a>
+						<ul>
+							{# Affiche ces liens uniquement si on est sur la page des articles #}
+							{% if 'article' in route %}
+								<li>
+									<a href="{{ path('create-article') }}" class="{{ route == 'create-article' ? 'active' : '' }}">Créer article</a>
+								</li>
+								<li>
+									<a href="{{ path('delete-article') }}" class="{{ route == 'delete-article' ? 'active' : '' }}">Supprimer article</a>
+								</li>
+							{% endif %}
+						</ul>
+					</li>
+					<li>
+						<a href="{{ path('contact') }}" class="{{ route == 'contact' ? 'active' : '' }}">Contact</a>
+					</li>
+					<li>
+						<a href="{{ path('about') }}" class="{{ route == 'about' ? 'active' : '' }}">A-propos</a>
+					</li>
+				</ul>
+			</nav>
+
+		</header>
+
 		<main>
